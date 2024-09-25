@@ -1,5 +1,7 @@
 package com.mstvisualizer;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.List;
 
 public class Main {
@@ -23,5 +25,24 @@ public class Main {
         for (Graph.Edge edge : mst) {
             System.out.println("Edge from " + edge.source + " to " + edge.destination + " with weight " + edge.weight);
         }
+
+        // Step 4: Create the Swing frame to display both graphs
+        JFrame frame = new JFrame("Graph Visualization");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1200, 400); // Make the window wider to fit both panels
+
+        // Set layout manager for the frame to arrange panels horizontally
+        frame.setLayout(new GridLayout(1, 2));
+
+        // Add the GraphPanel for the original graph
+        GraphPanel originalGraphPanel = new GraphPanel(graph, graph.getEdges(), false);
+        frame.add(originalGraphPanel);
+
+        // Add the GraphPanel for the MST
+        GraphPanel mstGraphPanel = new GraphPanel(graph, mst, true);
+        frame.add(mstGraphPanel);
+
+        // Make the frame visible
+        frame.setVisible(true);
     }
 }
