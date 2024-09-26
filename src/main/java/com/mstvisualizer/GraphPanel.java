@@ -7,7 +7,7 @@ import java.util.List;
 public class GraphPanel extends JPanel {
     private final Graph graph;
     private final List<Graph.Edge> edges; // Will either be original graph edges or MST edges
-    private final boolean isMST;
+    private final boolean isMST; // Flag to identify if the panel is for the MST
 
     public GraphPanel(Graph graph, List<Graph.Edge> edges, boolean isMST) {
         this.graph = graph;
@@ -19,13 +19,13 @@ public class GraphPanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // Positions for the vertices (hard-coded for simplicity)
+        // Positions for the vertices
         int[][] positions = {
-                {100, 100}, {200, 50}, {300, 100}, {200, 200}, {100, 300}, {300, 300}
+                {100, 100}, {250, 50}, {400, 100}, {250, 200}, {100, 300}, {400, 300}
         };
 
-        // Set different colors for original graph and MST
-        g.setColor(isMST ? Color.GREEN : Color.BLACK);
+        // The colour for the edges to black (for both original graph and MST)
+        g.setColor(Color.BLACK);
 
         // Draw edges and their weights
         for (Graph.Edge edge : edges) {
@@ -37,12 +37,12 @@ public class GraphPanel extends JPanel {
             // Draw the edge (line)
             g.drawLine(x1, y1, x2, y2);
 
-            // Draw the weight of the edge (positioned halfway between the vertices)
+            // Draw the weight of the edge
             int weightX = (x1 + x2) / 2;
             int weightY = (y1 + y2) / 2;
-            g.setColor(Color.RED); // Use red for the weights
+            g.setColor(Color.RED); // Red for edge weights
             g.drawString(String.valueOf(edge.weight), weightX, weightY);
-            g.setColor(isMST ? Color.GREEN : Color.BLACK); // Reset to the original color for the edges
+            g.setColor(Color.BLACK); // Reset to black for next edge
         }
 
         // Draw vertices as blue circles and label them with numbers

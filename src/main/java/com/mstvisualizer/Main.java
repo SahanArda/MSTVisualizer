@@ -7,14 +7,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // Step 1: Create the graph
-        Graph graph = new Graph(6); // Example graph with 6 vertices
+        Graph graph = new Graph(6);
         graph.addEdge(0, 1, 4);
         graph.addEdge(0, 2, 4);
+        graph.addEdge(0, 4, 12);
         graph.addEdge(1, 2, 2);
         graph.addEdge(1, 3, 6);
         graph.addEdge(2, 3, 8);
+        graph.addEdge(2, 5, 12);
         graph.addEdge(3, 4, 9);
         graph.addEdge(3, 5, 10);
+        graph.addEdge(4, 5, 8);
 
         // Step 2: Run Kruskal's MST algorithm
         MinimumSpanningTree mstAlgorithm = new MinimumSpanningTree();
@@ -29,7 +32,7 @@ public class Main {
         // Step 4: Create the Swing frame to display both graphs
         JFrame frame = new JFrame("Graph Visualization");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1200, 400); // Make the window wider to fit both panels
+        frame.setSize(1200, 400); // Window size
 
         // Set layout manager for the frame to arrange panels horizontally
         frame.setLayout(new GridLayout(1, 2));
