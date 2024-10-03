@@ -28,10 +28,10 @@ This Java project implements and visualises a Minimum Spanning Tree (MST) using 
 
 ## Program Overview
 
-In this program, users are prompted via the console to input details about their graph (number of vertices, edges, and weights). The program then generates a visual representation of the graph on the left, and its **Minimum Spanning Tree (MST)** is displayed on the right. The MST is calculated using **Kruskal's Algorithm**, which finds the set of edges that connect all vertices with the least total weight.
+In this program, users are prompted via the console to input details about their graph (number of vertices, edges, and weights). The program then generates a visual representation of the graph on the left, and its **Minimum Spanning Tree (MST)** is displayed on the right. The MST is calculated using **Kruskal's Algorithm**, which finds the set of edges that connect all vertices with the least total weight and without any complete cycles.
 
-Here’s an example of the visualized graphs (original on the left and MST on the right):
+Here’s a simple example of the visualised graphs (original on the left and MST on the right):
 
-![Graph and MST](./Graphs.png)
+![Graph and MST](./src/main/java/com/mstvisualizer/Graphs.png)
 
 ---
