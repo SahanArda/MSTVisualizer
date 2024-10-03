@@ -6,7 +6,7 @@ This Java project implements and visualises a Minimum Spanning Tree (MST) using 
 
 - [Features](#features)
 - [Technology Stack](#technology-stack)
-- [Program Overview](#frontend-overview)
+- [Program Overview](#Program-overview)
 
 ---
 
@@ -32,6 +32,6 @@ In this program, users are prompted via the console to input details about their
 
 Here’s an example of the visualized graphs (original on the left and MST on the right):
 
-![Graph and MST](./path/to/Graph.png)
+![Graph and MST](./Graphs.png)
 
 ---
